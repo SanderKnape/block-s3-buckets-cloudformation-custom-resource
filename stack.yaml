@@ -1,0 +1,5 @@
+Resources:
+  BlockPublicS3Buckets:
+    Type: "Custom::BlockPublicS3Buckets"
+    Properties:
+      ServiceToken: !ImportValue "custom-resource-block-public-s3-buckets"

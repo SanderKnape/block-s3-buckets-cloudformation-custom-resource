@@ -1,0 +1,26 @@
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  BlockPublicS3BucketsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: build/
+      Handler: publicbuckets.handler
+      Runtime: python3.6
+      Timeout: 5
+      Environment:
+        Variables:
+          ACCOUNT_ID: !Ref AWS::AccountId
+      Policies:
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - s3:*
+              Resource: "*"
+
+Outputs:
+  BlockPublicS3BucketsFunction:
+    Value: !GetAtt "BlockPublicS3BucketsFunction.Arn"
+    Export:
+      Name: "custom-resource-block-public-s3-buckets"
