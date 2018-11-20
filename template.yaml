@@ -16,7 +16,8 @@ Resources:
           Statement:
             - Effect: Allow
               Action:
-                - s3:*
+                - s3:GetAccountPublicAccessBlock
+                - s3:PutAccountPublicAccessBlock
               Resource: "*"
 
 Outputs:
