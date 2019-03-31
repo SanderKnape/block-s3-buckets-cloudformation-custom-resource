@@ -1,4 +1,3 @@
-S3BUCKET := CHANGEME
 
 init:
 	pipenv install
