@@ -4,8 +4,6 @@ The custom resource in this repository enables you to use the newly added S3 fea
 
 Note that this custom resource enables all features for blocking the creation of public S3 buckets. See the original blog post linked above for more information on the different features now available.
 
-> At the time of writing, I have not yet been able to find the specific IAM permissions needed to execute the `put_public_access_block` and the `delete_public_access_block` API calls. I have of course tried the obvious (`s3:DeletePublicAccessBlock` and `s3:PutPublicAccessBlock`), but these do not work. As it works with `s3:*`, I have decided to use this for now. As this is definitely not following the security least-privilege principle, I would very much like to replace this with the proper permissions. If you happen to know what permissions to place here, please leave a comment [in my blog](https://sanderknape.com/2018/11/blocking-account-wide-creation-public-s3-buckets-cloudformation-custom-resource/) or send me a message on [Twitter](https://twitter.com/SanderKnape).
-
 ## Requirements
 
 * AWS CLI with Administrator permission
