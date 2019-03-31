@@ -4,7 +4,7 @@ Resources:
   BlockPublicS3BucketsFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: build/
+      CodeUri: ../pkg/
       Handler: publicbuckets.handler
       Runtime: python3.6
       Timeout: 5
